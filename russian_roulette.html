@@ -1,0 +1,13 @@
+<meta charset="utf-8">
+<script>
+    var n = 0;
+    do {
+        if ((Math.random() * 6) < 1) {
+            alert('Ты труп');
+            break;
+        }
+        n++;
+    } while (prompt('Играем? да или нет') != 'нет');
+    alert('Раундов сыграно: ' + n);
+    alert('Удачного дня!');
+</script>
