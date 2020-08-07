@@ -1,0 +1,17 @@
+<meta charset="utf-8">
+<script>
+var n=0
+do{
+if (prompt('Играем? да или нет')=='нет') {
+alert('Удачного дня!');
+break;
+}
+if ((Math.random()*6)<1){
+alert('Ты труп');
+break;
+}
+n++
+}while(true)
+alert('Раундов сыграно: '+ n)
+
+</script>
