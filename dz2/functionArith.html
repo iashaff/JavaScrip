@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+              function sum(a, b) {
+            var result = (a + b);
+            alert(result);
+            return a + b;
+        }
+
+        function sub(a, b) {
+            var result = (a - b);
+            alert(result);
+            return a - b;
+        }
+
+        function mult(a, b) {
+            var result = (a * b);
+            alert(result);
+            return a * b;
+        }
+
+        function dev(a, b) {
+            var result = (a / b);
+            alert(result);
+            return a / b;
+        }
+
+        function mathOperation(a, b, operation) {
+        switch (operation){
+            case '+':
+                return sum (a, b);
+            
+            case  '-':
+                return sub (a, b);
+            
+            case '*': 
+                return mult (a, b);
+            
+            default:
+                return dev (a, b);
+        }}
+       var a = +prompt("Введите первое чило: ");
+        var b = +prompt("Введите второе число: ");
+        var operation = prompt("Введите арифмитическое действие: ");
+        mathOperation(a, b, operation);
+    </script>
+</head>
+
+<body> </body>
+
+</html>
