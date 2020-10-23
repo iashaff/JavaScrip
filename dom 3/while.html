@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script>
+        var x = 0;
+
+        function isPrime(n) {
+            var x = 2;
+            if (n >= 2) {
+                while (x < n) {
+                    if (n % x == 0) return false;
+                    x++;
+                }
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        while (x < 100) {
+            x++;
+            if (isPrime(x)) {
+                console.log(x);
+            }
+        }
+    </script>
+    <title>Document</title>
+</head>
+
+<body> </body>
+
+</html>
