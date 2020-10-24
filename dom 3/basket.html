@@ -8,32 +8,32 @@
         var a = 0;
         var goods = [
             {
-                title: "Товар 1"
-                , price: 500
-                , quantity: 1
+                title: "Товар 1",
+                 price: 500,
+                 quantity: 1
             }
             , {
-                title: "Товар 2"
-                , price: 800
-                , quantity: 1
+                title: "Товар 2",
+                 price: 800,
+                 quantity: 1
             }
             , {
-                title: "Товар 3"
-                , price: 150
-                , quantity: 1
+                title: "Товар 3",
+                 price: 150,
+                 quantity: 1
             }
             , {
-                title: "Товар 4"
-                , price: 900
-                , quantity: 1
+                title: "Товар 4",
+                 price: 900,
+                 quantity: 1
             }
                                 ]
 
         function countBasketPrice(goods) {
             for (good of goods) {
-                goods.quantity = +prompt("Введите колличество " + good.title);
+                good.quantity = +prompt("Введите колличество " + good.title);
                 var p = 0;
-                p = (p + good.price) * goods.quantity;
+                p = (p + good.price) * good.quantity;
                 a = a + p;
             }
             return a;
