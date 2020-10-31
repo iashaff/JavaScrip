@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"> </head>
+
+<body>
+    <div>
+        <table> </table>
+    </div>
+    <script>
+       
+        var figure = //фигуры
+    {
+    f1: '&#9812', //Король белый
+    f2: '&#9813', //Ферзь белый
+    f3: '&#9814', //Ладья белая
+    f4: '&#9815', //Слон белый
+    f5: '&#9816', //Конь белый
+    f6: '&#9817', //Пешка белая
+    f7: '&#9823', //Пешка черная
+    f8: '&#9818', //Король черный
+    f9: '&#9819', //Ферзь черный
+    f10: '&#9820', //Ладья черная
+    f11: '&#9821', //Слон черный
+    f12: '&#9822', //Конь черный
+};
+          function chess () {
+            letters = ['','A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', ''];
+            chisla = ['', '8', '7', '6', '5', '4', '3', '2', '1', ''];
+            mainFigureWhite = ['','&#9814', '&#9816', '&#9815', '&#9813', '&#9812', '&#9815', '&#9816', '&#9814', ''];
+            mainFugureBlack = ['','&#9820', '&#9822', '&#9821', '&#9819', '&#9818', '&#9821', '&#9822', '&#9820', '']; 
+        var table = document.createElement("table");
+        var tr, td;
+        for (var i = 0; i < 10; i++) {
+            tr = document.createElement("tr");
+            table.appendChild(tr);
+            for (var j = 0; j < 10; j++) {
+                td = document.createElement("td");
+                td.style.border = "1px solid black";
+               
+                if(i == 0 || j == 9) {
+                    td.innerHTML = letters [j];
+                    td.style.border = "none";
+                    td.className = "firstline";
+                } else if (i == 9 || j == 0){
+                    td.innerHTML = letters [j];
+                    td.style.border = "none";
+                    td.className = "thirdline";
+                }
+                 else if (i % 2 == j % 2) {
+                    td.className = "white";
+                }
+                else td.className = "black";
+                
+                if (i >0 & i < 9 & j == 0) {
+                    td.innerHTML = chisla [i];
+                    td.style.border = "none";
+                    td.className = "lastline";
+                } else if (i > 0 & i < 9 & j == 9){
+                    td.innerHTML = chisla [i];
+                    td.style.border = "none";
+                    td.className = "secondline";
+                }
+                if (i == 2 & j != 0 & j != 9){
+                    td.innerHTML = figure.f7;
+                    figure.f6.className = "peshka";
+                } else if (i == 7 & j != 0 & j != 9) {
+                   td.innerHTML = figure.f6;
+                    figure.f6.className = "peshka2";
+                           }
+                if (i == 1 & j!= 0 & j != 9){
+                    td.innerHTML = mainFugureBlack [j];
+                } else if (i == 8 & j != 0 & j != 9){
+                    td.innerHTML = mainFigureWhite [j];
+                }
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+        table.style.border = "1px solid gray";
+        document.querySelector("div").appendChild(table);
+        }
+        chess ();
+    
+    </script>
+</body>
+
+</html>
