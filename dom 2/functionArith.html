@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <script>
-              function sum(a, b) {
+        function sum(a, b) {
             var result = (a + b);
             alert(result);
             return a + b;
@@ -30,20 +30,18 @@
         }
 
         function mathOperation(a, b, operation) {
-        switch (operation){
+            switch (operation) {
             case '+':
-                return sum (a, b);
-            
-            case  '-':
-                return sub (a, b);
-            
-            case '*': 
-                return mult (a, b);
-            
+                return sum(a, b);
+            case '-':
+                return sub(a, b);
+            case '*':
+                return mult(a, b);
             default:
-                return dev (a, b);
-        }}
-       var a = +prompt("Введите первое чило: ");
+                return dev(a, b);
+            }
+        }
+        var a = +prompt("Введите первое чило: ");
         var b = +prompt("Введите второе число: ");
         var operation = prompt("Введите арифмитическое действие: ");
         mathOperation(a, b, operation);

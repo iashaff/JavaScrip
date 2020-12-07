@@ -1,0 +1,23 @@
+#gallery {
+    display: flex;
+    justify-content: space-between;
+}
+#image_1 {
+    width: 500px;
+     
+}
+#image_2 {
+    width: 500px;
+}
+#image_3 {
+    width: 500px;
+}
+#big_picture {
+    margin-left: 25%;
+    margin-bottom: 10px;
+}
+h2 {
+    color: indianred;
+    margin-left: 25%;
+    font-size: 500%;
+}

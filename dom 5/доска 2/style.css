@@ -1,0 +1,42 @@
+td {
+    width: 50px;
+    height: 50px;
+}
+
+div {
+    margin-left: 30%;
+}
+
+.white {
+    background: white;
+    text-align: center;
+}
+
+.black {
+    background: grey;
+    text-align: center;
+}
+
+.secondline {
+    transform: rotate(180deg);
+    text-align: center;
+}
+
+.firstline {
+    transform: rotate(180deg);
+    text-align: center;
+}
+.thirdline {
+    text-align: center;
+}
+.lastline {
+    text-align: center;
+}
+.peshka {
+    color: aqua;
+}
+text {
+    color:white;
+    text-shadow: black 1px 1px 0, black -1px -1px 0, 
+                 black -1px 1px 0, black 1px -1px 0;
+}

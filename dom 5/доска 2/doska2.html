@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"> </head>
+
+<body>
+    <div>
+        <table> </table>
+    </div>
+    <script>
+       
+        var figure = //фигуры
+    {
+    f1: 'К', //Король
+    f2: 'Ф', //Ферзь
+    f3: 'Л', //Ладья
+    f4: 'C', //Слон
+    f5: 'К', //Конь
+    f6: 'П' //Пешка     
+};
+        function chess () {
+            letters = ['','A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', ''];
+            chisla = ['', '8', '7', '6', '5', '4', '3', '2', '1', ''];
+            mainFigure = ['','Л', 'K', 'C', 'Ф', 'К', 'C', 'K', 'Л', ''];
+        var table = document.createElement("table");
+        var tr, td;
+        for (var i = 0; i < 10; i++) {
+            tr = document.createElement("tr");
+            table.appendChild(tr);
+            for (var j = 0; j < 10; j++) {
+                td = document.createElement("td");
+                td.style.border = "1px solid black";
+               
+                if(i == 0 || j == 9) {
+                    td.innerHTML = letters [j];
+                    td.style.border = "none";
+                    td.className = "firstline";
+                } else if (i == 9 || j == 0){
+                    td.innerHTML = letters [j];
+                    td.style.border = "none";
+                    td.className = "thirdline";
+                }
+                 else if (i % 2 == j % 2) {
+                    td.className = "white";
+                }
+                else td.className = "black";
+                
+                if (i >0 & i < 9 & j == 0) {
+                    td.innerHTML = chisla [i];
+                    td.style.border = "none";
+                    td.className = "lastline";
+                } else if (i > 0 & i < 9 & j == 9){
+                    td.innerHTML = chisla [i];
+                    td.style.border = "none";
+                    td.className = "secondline";
+                }
+                if (i == 2 & j != 0 & j != 9){
+                    td.innerHTML = "<text>" + figure.f6 + "</text>";
+                } else if (i == 7 & j != 0 & j != 9) {
+                   td.innerHTML = figure.f6;
+                           }
+                if (i == 1 & j!= 0 & j != 9){
+                    td.innerHTML = "<text>" + mainFigure[j] + "</text>";
+                } else if (i == 8 & j != 0 & j != 9){
+                    td.innerHTML = mainFigure [j];
+                }
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+        table.style.border = "1px solid gray";
+        document.querySelector("div").appendChild(table);
+        }
+        chess ();
+    
+    </script>
+</body>
+
+</html>

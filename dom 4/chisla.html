@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var x = +prompt('Введите число: ');
+        var object = {};
+        var b = String(x).split("");
+
+        function chisla(b) {
+            while (b.length < 3) {
+                b.unshift(0);
+            }
+            object.edenitsy = b[2];
+            object.desyatki = b[1];
+            object.sotni = b[0];
+            return object;
+        }
+        if (x < 0 || x > 999) {
+            console.log(object);
+            console.log("Вы ввели неверное число. Нужно вводить от 0 до 999 ");
+        }
+        else console.log(chisla(b));
+    </script>
+</head>
+
+<body> </body>
+
+</html>
