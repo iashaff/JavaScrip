@@ -97,6 +97,7 @@ function move() {
     //console.log('move',direction);
     // Сборка классов
     var snake_head_classes = snake[snake.length-1].getAttribute('class').split(' ');
+    
 
     // Сдвиг головы
     var new_unit;
@@ -107,23 +108,50 @@ function move() {
     // Определяем новую точку
     if (direction == 'x-') {
         new_unit = document.getElementsByClassName('cell-' + (coord_y) + '-' + (coord_x - 1))[0];
+        
     }
     else if (direction == 'x+') {
         new_unit = document.getElementsByClassName('cell-' + (coord_y) + '-' + (coord_x + 1))[0];
+        
     }
     else if (direction == 'y+') {
         new_unit = document.getElementsByClassName('cell-' + (coord_y - 1) + '-' + (coord_x))[0];
+        
     }
     else if (direction == 'y-') {
         new_unit = document.getElementsByClassName('cell-' + (coord_y + 1) + '-' + (coord_x))[0];
+    }
+    
+    if (new_unit === undefined) {
+        new_unit = headTeleport(coord_y, coord_x);
+    }
+    
+    //Перемещение змейки через стены
+    
+    function headTeleport (coord_y, coord_x) {
+        var unit;
+        if (direction == 'x-') {
+            unit = document.getElementsByClassName('cell-' + (coord_y) + '-' + (FIELD_SIZE_X-1))[0];
+        }
+        else if (direction == 'x+'){
+            unit = document.getElementsByClassName('cell-' + (coord_y) + '-' + (0)) [0];
+        }
+        else if (direction == 'y+'){
+            unit = document.getElementsByClassName('cell-' + (FIELD_SIZE_Y-1) + '-' + (coord_x)) [0];
+        }
+        else if (direction == 'y-'){
+           unit = document.getElementsByClassName('cell-' + (0) + '-' + (coord_x)) [0];
+        }
+        return unit;
     }
 
     // Проверки
     // 1) new_unit не часть змейки
     // 2) Змейка не ушла за границу поля
     //console.log(new_unit);
-    if (!isSnakeUnit(new_unit) && new_unit !== undefined && !haveBomb(new_unit)) {
+    if (!isSnakeUnit(new_unit) && !haveBomb(new_unit)) {
         // Добавление новой части змейки
+        console.log(new_unit)
         new_unit.setAttribute('class', new_unit.getAttribute('class') + ' snake-unit');
         snake.push(new_unit);
 
@@ -210,6 +238,7 @@ function createFood() {
 function haveBomb(unit) {
     var check = false;
     var unit_classes = unit.getAttribute('class').split(' ');
+
     // Если препятствие
     if (unit_classes.includes('bomb-unit')) {
         check = true;
@@ -236,11 +265,11 @@ while (!bombCreated) {
         setTimeout(createBomb, 8000);
     }
     if (!bomb_cell_classes.includes('snake-unit') && !bomb_cell_classes.includes('food-unit')) {
-        var Classes = '';
+        var classes = '';
         for (var i = 0; i < bomb_cell_classes.length; i++){
-            Classes +=bomb_cell_classes[i] + ' ';
+            classes +=bomb_cell_classes[i] + ' ';
         }
-        bomb_cell.setAttribute('class', Classes + 'bomb-unit');
+        bomb_cell.setAttribute('class', classes + 'bomb-unit');
         bombCreated = true;
         
         }
