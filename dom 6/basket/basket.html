@@ -4,38 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <script src="script.js" defer></script>
+
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> </head>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+</head>
 
 <body>
     <div class="main">
-        <div class="basket">
+        <div class="basket" id="bas-ket">
             <h2 class="basket-title">Корзина</h2>
-            <p class="title">Название: </p>
-            <p class="title">Количество: </p>
-            <p class="title">Цена:</p>
         </div>
-        <div class="goods">
-            <div class="item">
-                <h2 class="name">Фотоаппарат</h2> <img src="img/1.jpg" alt="">
-                <h2 class="price">15000</h2>
-                <button onclick="buy()" id="i1">Купить</button>
-            </div>
-            <div class="item">
-                <h2 class="name">Наушники</h2> <img src="img/2.jpg" alt="">
-                <h2 class="price">7000</h2>
-                <button onclick="buy()" id="i2">Купить</button>
-            </div>
-            <div class="item">
-                <h2 class="name">Телефон</h2> <img src="img/3.png" alt="">
-                <h2 class="price">10000</h2>
-                <button onclick="buy()" id="i3">Купить</button>
-            </div>
-        </div>
+        <p class="total" id="total"></p>
+        <div class="goods" id="list"></div>
     </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
-
-

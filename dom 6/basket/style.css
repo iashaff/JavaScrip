@@ -1,31 +1,58 @@
 .main {
     margin: auto;
 }
+
 .goods {
     display: flex;
     justify-content: space-between;
+    text-align: center;
     flex-wrap: wrap;
 }
-.item {
+
+.items {
     padding-bottom: 15px;
 }
+
 button {
     border-radius: 7px;
     font-size: 15px;
     background-color: #868181;
-    margin-left: 45%;
+
 }
+
 .name {
     text-align: center;
     color: darkcyan;
     font-family: 'Source Sans Pro', sans-serif;
 }
+
 .price {
     text-align: center;
 }
-.title {
+
+.bascket-title {
     font-family: 'Source Sans Pro', sans-serif;
 }
-.bascket-title {
-  font-family: 'Source Sans Pro', sans-serif;  
+
+.basket {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
+}
+
+.basket-content {
+    border: 1px solid black;
+}
+
+.basket-row {
+    border: 1px solid black;
+}
+
+.basket-cell {
+    border: 1px solid black;
+}
+
+.total {
+    color: darkblue;
+    font-size: 20px;
+    font-weight: 700;
 }
